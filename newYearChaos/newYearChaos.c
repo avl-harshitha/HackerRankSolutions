@@ -10,10 +10,10 @@
 
 char* readline();
 char** split_string(char*);
-void swap(int* a, int i) {
-    int temp = a[i];
-    a[i] = a[i - 1];
-    a[i - 1] = temp;
+void swap(int* a, int* b) {
+    int* temp = a;
+    a = b;
+    b = temp;
 }
 // Complete the minimumBribes function below.
 void minimumBribes(int n, int* a) {
@@ -25,7 +25,7 @@ void minimumBribes(int n, int* a) {
             if(((i - 1) >= 0) && a[i - 1] == (i + 1))
             {
                 bribe++;
-                swap(a, i);
+                swap(a[i], a[i - 1]);
             }
             else if(((i - 2) >= 0) && a[i - 2] == (i + 1))
             {
