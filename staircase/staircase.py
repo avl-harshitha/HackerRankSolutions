@@ -1,4 +1,4 @@
-#4 out of 11 test cases failed.
+
 #!/bin/python3
 
 import math
